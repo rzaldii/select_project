@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_page.dart';
 import 'card_detail.dart';
-import 'prak_5.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,7 @@ class Dashboard extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 45, 136, 121),
+                color: const Color.fromARGB(255, 245, 245, 245),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30),
@@ -43,6 +44,7 @@ class Dashboard extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -69,7 +71,7 @@ class Dashboard extends StatelessWidget {
                               ),
                               child: Icon(
                                 Icons.person,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 42, 40, 41),
                                 size: 30,
                               ),
                             ),
@@ -81,7 +83,7 @@ class Dashboard extends StatelessWidget {
                             style: GoogleFonts.poppins(
                               fontSize: 26,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 42, 40, 41),
                             ),
                           ),
                         ],
@@ -95,7 +97,7 @@ class Dashboard extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Prak5Page(),
+                                  builder: (context) => LoginPage(),
                                 ),
                               );
                             },
@@ -106,7 +108,17 @@ class Dashboard extends StatelessWidget {
                           ),
 
                           const SizedBox(width: 8),
-                          Icon(Icons.notifications, color: Colors.white),
+                          Container(
+                            padding: EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Icon(
+                              Icons.notifications,
+                              color: Color.fromARGB(255, 42, 40, 41),
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -125,7 +137,7 @@ class Dashboard extends StatelessWidget {
                           child: TextField(
                             decoration: InputDecoration(
                               icon: Icon(Icons.search, color: Colors.grey),
-                              hintText: 'Mau pesan apa hari ini?',
+                              hintText: 'Mau sewa apa hari ini?',
                               border: InputBorder.none,
                             ),
                           ),
@@ -137,7 +149,7 @@ class Dashboard extends StatelessWidget {
                         width: 45,
                         height: 45,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 190, 150, 95),
+                          color: Color.fromARGB(255, 247, 209, 105),
                           borderRadius: BorderRadius.circular(100),
                         ),
                         child: GestureDetector(
@@ -145,10 +157,15 @@ class Dashboard extends StatelessWidget {
                             print('User pindah ke page Coba');
                             Navigator.push(
                               context,
+
                               MaterialPageRoute(builder: (context) => CardDetail()),
+
                             );
                           },
-                          child: Icon(Icons.sort, color: Colors.white),
+                          child: Icon(
+                            Icons.sort,
+                            color: Color.fromARGB(255, 42, 40, 41),
+                          ),
                         ),
                       ),
                     ],
@@ -164,12 +181,13 @@ class Dashboard extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Text(
-                      'Daftar Anu',
-                      style: GoogleFonts.poppins(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 190, 150, 95),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        'assets/icons/iphone_iklan.gif',
+                        height: 140,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -206,36 +224,29 @@ class Dashboard extends StatelessWidget {
                           Tab(
                             height: 120,
                             child: _buildCategoriesCard(
-                              'assets/icons/coffee-cup.png',
-                              'Coffee',
+                              'assets/icons/kategori_hp.jpg',
+                              'Handphone',
                             ),
                           ),
                           Tab(
                             height: 120,
                             child: _buildCategoriesCard(
-                              'assets/icons/ice-tea.png',
-                              'Tea',
+                              'assets/icons/kategori_kamera.png',
+                              'Camera',
                             ),
                           ),
                           Tab(
                             height: 120,
                             child: _buildCategoriesCard(
-                              'assets/icons/milkshake.png',
-                              'Milkshake',
+                              'assets/icons/kategori_proyektor.avif',
+                              'Proyektor',
                             ),
                           ),
                           Tab(
                             height: 120,
                             child: _buildCategoriesCard(
-                              'assets/icons/orange-juice.png',
-                              'Juice',
-                            ),
-                          ),
-                          Tab(
-                            height: 120,
-                            child: _buildCategoriesCard(
-                              'assets/icons/snacks.png',
-                              'Snack',
+                              'assets/icons/kategori_mixer.jpeg',
+                              'Mixer',
                             ),
                           ),
                         ],
@@ -245,11 +256,10 @@ class Dashboard extends StatelessWidget {
                     Expanded(
                       child: TabBarView(
                         children: [
-                          _buildMenuGrid('Coffee'),
-                          _buildMenuGrid('Tea'),
-                          Center(child: Text("Menu Milkshake belum tersedia")),
-                          Center(child: Text("Menu Juice belum tersedia")),
-                          Center(child: Text("Menu Snack belum tersedia")),
+                          _buildMenuGrid('HP'),
+                          Center(child: Text("Menu Camera belum tersedia")),
+                          Center(child: Text("Menu Proyektor belum tersedia")),
+                          Center(child: Text("Menu Mixer belum tersedia")),
                         ],
                       ),
                     ),
@@ -354,7 +364,7 @@ class Dashboard extends StatelessWidget {
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: const Color.fromARGB(255, 190, 150, 95),
+                    color: Color.fromARGB(255, 42, 40, 41),
                   ),
                   child: Icon(Icons.add, color: Colors.white),
                 ),
@@ -368,37 +378,25 @@ class Dashboard extends StatelessWidget {
 
   Widget _buildMenuGrid(String category) {
     return GridView.count(
-      childAspectRatio: 0.8, // Sesuaikan angka ini agar tidak overflow
+      childAspectRatio: 0.8,
       crossAxisCount: 2,
       crossAxisSpacing: 16,
       mainAxisSpacing: 20,
       padding: const EdgeInsets.only(bottom: 20),
       children: [
-        // Di sini kamu bisa memfilter menu berdasarkan kategori nanti
         _buildMenuCard(
-          'assets/icons/coffee-cup.png',
+          'assets/icons/hp_iphone16.webp',
           '$category 1',
           4.7,
-          12000,
+          100,
         ),
         _buildMenuCard(
-          'assets/icons/coffee-cup.png',
+          'assets/icons/hp_samsungS24.jpg.jpeg',
           '$category 2',
-          4.9,
-          18000,
-        ),
-        _buildMenuCard(
-          'assets/icons/coffee-cup.png',
-          '$category 3',
           4.5,
-          15000,
+          80,
         ),
-        _buildMenuCard(
-          'assets/icons/coffee-cup.png',
-          '$category 4',
-          4.2,
-          10000,
-        ),
+        _buildMenuCard('assets/icons/rog.jpg', '$category 3', 4.5, 120),
       ],
     );
   }

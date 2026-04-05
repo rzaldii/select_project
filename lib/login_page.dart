@@ -8,7 +8,7 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -18,12 +18,7 @@ class MyApp extends StatefulWidget {
       home: LoginPage(),
     );
   }
-  
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+
 }
 
 class LoginPage extends StatelessWidget {
