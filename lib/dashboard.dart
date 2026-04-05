@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_page.dart';
-import 'coba.dart';
+import 'card_detail.dart';
 import 'prak_5.dart';
 
 void main() {
@@ -145,7 +145,7 @@ class Dashboard extends StatelessWidget {
                             print('User pindah ke page Coba');
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Coba()),
+                              MaterialPageRoute(builder: (context) => CardDetail()),
                             );
                           },
                           child: Icon(Icons.sort, color: Colors.white),
