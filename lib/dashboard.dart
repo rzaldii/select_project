@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'login_page.dart';
 import 'card_detail.dart';
 
-
 void main() {
   runApp(const MyApp());
   ;
@@ -158,8 +157,9 @@ class Dashboard extends StatelessWidget {
                             Navigator.push(
                               context,
 
-                              MaterialPageRoute(builder: (context) => CardDetail()),
-
+                              MaterialPageRoute(
+                                builder: (context) => CardDetail(),
+                              ),
                             );
                           },
                           child: Icon(
@@ -256,7 +256,17 @@ class Dashboard extends StatelessWidget {
                     Expanded(
                       child: TabBarView(
                         children: [
-                          _buildMenuGrid('HP'),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CardDetail(),
+                                ),
+                              );
+                            },
+                            child: _buildMenuGrid('HP'),
+                          ),
                           Center(child: Text("Menu Camera belum tersedia")),
                           Center(child: Text("Menu Proyektor belum tersedia")),
                           Center(child: Text("Menu Mixer belum tersedia")),
@@ -387,7 +397,7 @@ class Dashboard extends StatelessWidget {
         _buildMenuCard(
           'assets/icons/hp_iphone16.webp',
           '$category 1',
-          4.7,
+          4.0,
           100,
         ),
         _buildMenuCard(

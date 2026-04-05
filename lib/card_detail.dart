@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
+import 'dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: CardDetail());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: CardDetail(),
+    );
   }
 }
 
@@ -48,7 +52,7 @@ class CardDetail extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoginPage(),
+                                builder: (context) => Dashboard(),
                               ),
                             );
                           },
@@ -69,7 +73,7 @@ class CardDetail extends StatelessWidget {
                                   color: Color.fromARGB(255, 247, 209, 105),
                                   shape: BoxShape.circle,
                                 ),
-                                child:  Text(
+                                child: Text(
                                   '2',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10,
@@ -86,14 +90,14 @@ class CardDetail extends StatelessWidget {
 
                     // Nama Produk
                     Text(
-                      "SONY - WH",
+                      "Iphone 16",
                       style: GoogleFonts.poppins(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "1000XM4",
+                      "Pro Max",
                       style: GoogleFonts.poppins(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -104,7 +108,7 @@ class CardDetail extends StatelessWidget {
                     // Gambar Produk
                     Center(
                       child: Image.asset(
-                        'assets/icons/kamera.png',
+                        'assets/icons/hp_iphone16.webp',
                         height: 250,
                         fit: BoxFit.contain,
                       ),
@@ -124,10 +128,10 @@ class CardDetail extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.view_in_ar, color: Colors.black54),
+                      Icon(Icons.thumb_up, color: const Color.fromARGB(255, 0, 0, 0)),
                       SizedBox(width: 15),
                       Text(
-                        "AR Checkout",
+                        "Tambahkan ke Favorit",
                         style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                       ),
                       Spacer(),
@@ -182,11 +186,21 @@ class CardDetail extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 15),
-                    buildBulletPoint("Balanced Sound Signature"),
-                    buildBulletPoint("Ideal for the Workplace"),
-                    buildBulletPoint("Wireless Range of 10m"),
-                    buildBulletPoint("Volume control"),
-                    buildBulletPoint("Ideal for commuting"),
+                    buildBulletPoint(
+                      "Performa super cepat dengan chip terbaru",
+                    ),
+                    buildBulletPoint(
+                      "Kamera canggih untuk hasil foto dan video profesional",
+                    ),
+                    buildBulletPoint(
+                      "Desain elegan dan premium khas Apple"
+                    ),
+                    buildBulletPoint(
+                      "Daya tahan baterai lebih lama untuk aktivitas seharian",
+                    ),
+                    buildBulletPoint(
+                      "Layar jernih dengan warna yang tajam dan responsif",
+                    ),
                   ],
                 ),
               ),
@@ -208,14 +222,14 @@ class CardDetail extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Price :",
+                          "Harga :",
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          "\$219.07",
+                          "Rp 100,00",
                           style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontSize: 22,
@@ -244,7 +258,7 @@ class CardDetail extends StatelessWidget {
                       ),
                       icon: const Icon(Icons.shopping_bag_outlined),
                       label: Text(
-                        "Add to cart",
+                        "Pesan Sekarang",
                         style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                       ),
                     ),
