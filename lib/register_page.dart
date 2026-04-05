@@ -24,7 +24,7 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 45, 136, 121),
+      backgroundColor: const Color.fromARGB(255, 47, 44, 45),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -72,7 +72,7 @@ class RegisterPage extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 45, 136, 121),
+                      color: Color.fromARGB(255, 42, 40, 41),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -150,7 +150,7 @@ class RegisterPage extends StatelessWidget {
                       },
 
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 45, 136, 121),
+                        backgroundColor: Color.fromARGB(255, 247, 209, 105),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -160,7 +160,7 @@ class RegisterPage extends StatelessWidget {
                         "Register",
                         style: GoogleFonts.poppins(
                           fontSize: 17,
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 42, 40, 41),
                           fontWeight: FontWeight.normal,
                         ),
                       ),
@@ -192,7 +192,7 @@ class RegisterPage extends StatelessWidget {
                           child: Text(
                             "Login",
                             style: GoogleFonts.poppins(
-                              color: Color.fromARGB(255, 45, 136, 121),
+                              color: Color.fromARGB(255, 42, 40, 41),
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
